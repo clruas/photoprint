@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import QRCode from 'react-qr-code'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import './app.sass'
 
 /*
@@ -112,7 +113,9 @@ function App() {
 		<button onClick={viewPhotos}>Imprimir</button>
 		<div className='pix'>
 			<div>{payload}</div>
-			<button onClick={handleCopy}>Copiar cóodigo</button>
+			<CopyToClipboard text={payload}>
+				<button>Copiar cóodigo</button>
+			</CopyToClipboard>
 		</div>
 	</div>
 }
